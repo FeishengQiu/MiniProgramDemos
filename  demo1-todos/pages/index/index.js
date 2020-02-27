@@ -1,54 +1,139 @@
-//index.js
-//获取应用实例
-const app = getApp()
-
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    //输入框的值
+    addData: '',
+    todos: [{
+        missionName: 'learning WX',
+        completed: true
+      },
+      {
+        missionName: 'learning HTML',
+        completed: false
+      },
+      {
+        missionName: 'learning CSS',
+        completed: true
+      }
+    ],
+    leftCount: 0,
+    toggleState:false
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function(options) {
+    var count = 0;
+    for (let i = 0; i < this.data.todos.length; i++) {
+      if (!this.data.todos[i].completed) {
+        count++;
+      }
+    }
+    this.setData({leftCount:count})
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function() {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function() {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function() {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function() {
+
+  },
+  addDataChange: function(e) {
+    this.setData({
+      addData: e.detail.value
     })
   },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
+  addItem: function() {
+    if (this.data.addData) {
+      const todosPre = this.data.todos;
+      todosPre.push({
+        missionName: this.data.addData,
+        completed: false
       })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
+      this.data.leftCount += 1;
+      this.setData({
+        todos: todosPre,
+        addData: '',
+        leftCount: this.data.leftCount
       })
     }
+
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
+  changeItem: function(e) {
+    var item = this.data.todos[e.currentTarget.dataset.index];
+    item.completed = !item.completed;
+    this.data.leftCount = this.data.leftCount + (item.completed ? -1 : 1)
     this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      todos: this.data.todos,
+      leftCount: this.data.leftCount
     })
+  },
+  removeItem:function(e){
+    var item = this.data.todos[e.currentTarget.dataset.index];
+    this.data.leftCount = this.data.leftCount + (item.completed ?0: -1);
+    var todos = this.data.todos;
+    todos.splice(e.currentTarget.dataset.index,1)
+    this.setData({ todos:todos,leftCount:this.data.leftCount})
+  },
+  toggleAll:function(){
+    this.data.toggleState=!this.data.toggleState;
+    var that=this;
+    this.data.todos.forEach(function(item){
+      item.completed=that.data.toggleState
+    })
+
+    this.setData({todos:this.data.todos,leftCount:(this.data.toggleState?0:this.data.todos.length)})
+  },
+  clearCompled:function(){
+    var todos=this.data.todos.filter(function(item){
+        return !item.completed
+    })
+    this.setData({todos:todos})
   }
 })

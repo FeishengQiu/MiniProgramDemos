@@ -1,21 +1,68 @@
-/**index.wxss**/
-.userinfo {
+.index-container {
+  border-top: 1rpx solid #e0e0e0;
+}
+
+.add-item {
   display: flex;
-  flex-direction: column;
   align-items: center;
-}
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
   margin: 20rpx;
-  border-radius: 50%;
+  padding: 20rpx;
+  border: 1rpx solid #e0e0e0;
+  border-radius: 5rpx;
+  box-shadow: 0 0 5rpx #e0e0e0;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.add-item image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
 }
 
-.usermotto {
-  margin-top: 200px;
+.list {
+  border: 1rpx solid #e0e0e0;
+  border-radius: 5rpx;
+  box-shadow: 0 0 5rpx #e0e0e0;
+  margin: 20rpx;
+}
+
+.list .list-item{
+  display: flex;
+  padding: 20rpx;
+  align-items: center;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+
+.list .list-item{
+  display: flex;
+  padding: 20rpx;
+  align-items: center;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+
+  .list .list-item:last-child{
+    border-bottom: 0;
+  }
+
+
+.list .list-item text{
+  flex: 1;
+  margin-left: 20rpx
+}
+
+.list .list-item.completed text{
+  flex: 1;
+  margin-left: 20rpx;
+  color:#888;
+  text-decoration:line-through; 
+}
+
+.footer{
+  display: flex;
+  margin: 20rpx;
+  justify-content: space-between
+}
+
+
+.footer text{
+  color: #3e3
 }
