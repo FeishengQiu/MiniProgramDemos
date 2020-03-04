@@ -27,6 +27,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    console.log('我是page1.js的onLoad')
     var count = 0;
     for (let i = 0; i < this.data.todos.length; i++) {
       if (!this.data.todos[i].completed) {
@@ -40,21 +41,21 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    console.log('我是page1.js的onReady')
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    console.log('我是page1.js的onShow')
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-
+    console.log('我是page1.js的onHide')
   },
 
   /**

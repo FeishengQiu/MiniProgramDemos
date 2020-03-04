@@ -1,0 +1,12 @@
+<!--pages/index/index.wxml-->
+
+<view class="container">
+
+<swiper>
+<swiper-item>
+<image src="/images/temp/banner1.jpg" mode="widthFix"/>
+</swiper-item>
+</swiper>
+
+
+</view>

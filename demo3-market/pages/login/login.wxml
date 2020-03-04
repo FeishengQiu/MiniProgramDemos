@@ -1,0 +1,20 @@
+<!--pages/login/login.wxml-->
+
+<view class="login_container">
+
+  <text>欢迎进入微信商城</text>
+
+  <view class="phone_number">
+    <input placeholder="请输入手机号" bindblur="getNumber" type="number"></input>
+  </view>
+
+  <view class="code_container">
+    <input placeholder="请输入验证码" bindblur="getCode" type="number"></input>
+    <button class="btn_code" style="width:250rpx;margin-left:10rpx" hover-class="btn_code_hover">获取验证码</button>
+  </view>
+
+  <button class="btn_login"  type="primary" style="width:700rpx" bindtap="login">商城登录</button>
+
+
+
+</view>
