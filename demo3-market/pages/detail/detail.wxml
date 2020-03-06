@@ -1,0 +1,42 @@
+<!--pages/detail/detail.wxml-->
+
+<scroll-view scroll-y>
+
+<view class="swiper_container">
+
+  <!-- 轮播图 -->
+  <swiper autoplay circular indicator-dots>
+    <swiper-item>
+      <video src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+        enable-danmu danmu-btn controls ></video>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/temp/banner2.jpg" mode="aspectFill"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/temp/banner3.jpg" mode="aspectFill"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/temp/banner4.jpg" mode="aspectFill"></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+
+  <!-- 产品详情 -->
+  <view class="image_container">
+    <image src="/images/detail01.png" mode="widthFix"></image>
+    <image src="/images/detail02.png" mode="widthFix"></image>
+    <image src="/images/detail03.png" mode="widthFix"></image>
+  </view>
+
+</scroll-view>
+
+
+  <!-- 购买按钮 -->
+  <view class="btn_container">
+    <button type="primary" >添加到购物车</button>
+    <button type="primary" >立即购买</button>
+  </view>
+
+  
