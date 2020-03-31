@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/workplace/workplace",
+    "pages/profile/profile"  
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "首页",
+      "color": "#707070",
+      "iconPath": "/img/home.png",
+      "selectedIconPath": "/img/home_selected.png"
+    },
+    {
+      "pagePath": "pages/workplace/workplace",
+      "text": "职场",
+      "color": "#707070",
+      "iconPath": "/img/workplace.png",
+      "selectedIconPath": "/img/workplace_selected.png"
+    },
+    {
+      "pagePath": "pages/profile/profile",
+      "text": "我",
+      "color": "#707070",
+      "iconPath": "/img/mine.png",
+      "selectedIconPath": "/img/mine_selected.png"
+    }]
+  },
+  "sitemapLocation": "sitemap.json"
+}

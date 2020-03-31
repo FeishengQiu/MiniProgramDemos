@@ -1,0 +1,30 @@
+<!--pages/home/home.wxml-->
+
+<view class="navi_bar">
+
+  <view class="search_bar">
+    <icon type="search"></icon>
+  </view>
+
+  <view class="summary">
+    <image src="/img/icon_summary.png"></image>
+    <text>写心得</text>
+  </view>
+
+</view>
+
+
+
+<van-tabs active="{{ 0 }}">
+  <van-tab title="推荐">内容 1</van-tab>
+  <van-tab title="前端开发">内容 2</van-tab>
+  <van-tab title="后台开发">内容 3</van-tab>
+  <van-tab title="移动开发">内容 4</van-tab>
+  <van-tab title="产品经理">内容 5</van-tab>
+  <van-tab title="客户经理">内容 6</van-tab>
+
+  <view slot="nav-right" bindtap="tabMenu" class="slot_menu">
+    <!-- <view class="menu_text">职业</view> -->
+    <image src="/img/icon_menu.png"></image>
+  </view>
+</van-tabs>

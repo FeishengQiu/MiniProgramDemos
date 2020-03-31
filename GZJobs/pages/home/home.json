@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "mp-searchbar": "../weui/searchbar/searchbar",
+    "van-tab": "/dist/tab/index",
+    "van-tabs": "/dist/tabs/index"
+  }
+}
